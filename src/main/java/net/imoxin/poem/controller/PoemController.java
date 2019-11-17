@@ -1,18 +1,20 @@
 package net.imoxin.poem.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import net.imoxin.poem.entity.Poem;
+import net.imoxin.poem.service.PoemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping(value="/api", produces = "application/json; charset=UTF-8")
 public class PoemController {
 
-    @RequestMapping(value = "/poem", method = RequestMethod.GET)
-    public String getMsg(@RequestParam(value = "id", required = true) String pid){
+    @Autowired
+    PoemService poemService;
 
-        return null
-                ;
+    @GetMapping("/poem/{pid}")
+    public String getMsg(@PathVariable(value = "pid") String pid){
+        Poem poem = poemService.getPoemInfo();
+        return poem.getTitle();
     }
 }

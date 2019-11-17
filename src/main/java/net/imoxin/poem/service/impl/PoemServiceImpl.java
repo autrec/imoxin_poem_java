@@ -13,9 +13,10 @@ public class PoemServiceImpl implements PoemService {
     private PoemMapper poemMapper;
 
     @Override
-    public Poem getPoeminfo() {
-        poemMapper.getPoemInfo();
-        return null;
+    public Poem getPoemInfo() {
+        ///poemMapper.getPoemInfo();
+        Poem poem = new Poem("我是标题","我是文章");
+        return poem;
     }
 }
 
