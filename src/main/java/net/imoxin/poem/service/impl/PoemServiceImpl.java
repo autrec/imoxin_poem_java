@@ -18,6 +18,12 @@ public class PoemServiceImpl implements PoemService {
         Poem poem = new Poem("我是标题","我是文章");
         return poem;
     }
+
+    @Override
+    public Poem getPoemInfo(String pid){
+        Poem poem = new Poem("我是标题","我是文章");
+        return poem;
+    }
 }
 
 

@@ -12,9 +12,24 @@ public class PoemController {
     @Autowired
     PoemService poemService;
 
+    /**
+     * 查询指定诗
+     * @param pid
+     * @return
+     */
     @GetMapping("/poem/{pid}")
     public String getMsg(@PathVariable(value = "pid") String pid){
-        Poem poem = poemService.getPoemInfo();
+        Poem poem = poemService.getPoemInfo(pid);
         return poem.getTitle();
     }
+
+    /**
+     * 随机查询诗
+     * @return
+     */
+    @GetMapping("/")
+    public Poem getPoem(){
+        return poemService.getPoemInfo();
+    }
+
 }
