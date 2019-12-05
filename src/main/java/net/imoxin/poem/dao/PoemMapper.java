@@ -1,4 +1,4 @@
-package net.imoxin.poem.mapper;
+package net.imoxin.poem.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import net.imoxin.poem.entity.Poem;

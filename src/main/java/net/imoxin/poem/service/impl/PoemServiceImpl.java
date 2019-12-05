@@ -1,6 +1,6 @@
 package net.imoxin.poem.service.impl;
 
-import net.imoxin.poem.mapper.PoemMapper;
+import net.imoxin.poem.dao.PoemMapper;
 import net.imoxin.poem.entity.Poem;
 import net.imoxin.poem.service.PoemService;
 import org.springframework.beans.factory.annotation.Autowired;
