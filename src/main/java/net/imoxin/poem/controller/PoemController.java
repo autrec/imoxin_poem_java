@@ -18,9 +18,9 @@ public class PoemController {
      * @return
      */
     @GetMapping("/poem/{pid}")
-    public String getMsg(@PathVariable(value = "pid") String pid){
+    public Poem getMsg(@PathVariable(value = "pid") String pid){
         Poem poem = poemService.getPoemInfo(pid);
-        return poem.getTitle();
+        return poem;
     }
 
     /**
