@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface PoemMapper {
-    Poem getPoemInfo();
+    Poem getPoemInfo(String id);
+    Poem getRandPoemInfo();
 }

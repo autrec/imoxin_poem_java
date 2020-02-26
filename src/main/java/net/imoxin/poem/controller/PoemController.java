@@ -29,7 +29,7 @@ public class PoemController {
      */
     @GetMapping("/")
     public Poem getPoem(){
-        return poemService.getPoemInfo();
+        return poemService.getRandPoemInfo();
     }
 
 }

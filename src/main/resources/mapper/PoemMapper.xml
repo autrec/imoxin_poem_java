@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="net.imoxin.poem.dao.PoemMapper">
-    <select id="getPoemInfo" resultType="net.imoxin.poem.entity.Poem">
-        SELECT title from poem WHERE id = #{id}
+    <select id="getPoemInfo" parameterType="string" resultType="net.imoxin.poem.entity.Poem">
+        SELECT title,text from poem_info WHERE id = #{id}
+    </select>
+    <!--获取随机一条-->
+    <select id="getRandPoemInfo" resultType="net.imoxin.poem.entity.Poem">
+        SELECT title,text FROM poem_info ORDER BY RAND() LIMIT 1;
     </select>
 </mapper>

@@ -13,15 +13,14 @@ public class PoemServiceImpl implements PoemService {
     private PoemMapper poemMapper;
 
     @Override
-    public Poem getPoemInfo() {
-        ///poemMapper.getPoemInfo();
-        Poem poem = new Poem("我是标题","我是文章");
-        return poem;
+    public Poem getRandPoemInfo() {
+
+        return poemMapper.getRandPoemInfo();
     }
 
     @Override
     public Poem getPoemInfo(String pid){
-        Poem poem = new Poem("我是标题","我是文章");
+        Poem  poem = poemMapper.getPoemInfo(pid);
         return poem;
     }
 }

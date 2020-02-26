@@ -6,6 +6,7 @@ public class Poem implements Serializable {
 
     private String title;
     private String content;
+    private String text;
 
     public Poem(String title, String content){
         this.title = title;
@@ -26,5 +27,12 @@ public class Poem implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setText(String text){
+        this.text = text;
+    }
+    public String getText(){
+        return text;
     }
 }
